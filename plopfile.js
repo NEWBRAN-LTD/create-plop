@@ -1,10 +1,7 @@
-// plopfile.ts
-// Here we don't really specify anything instead we will scan folder
-// and dynamic import the plopfiles from users or other places
-import { NodePlopAPI } from 'plop'
+// plopfile.js
 
-export default function (plop: NodePlopAPI) {
-  // plop generator code
+export default function (plop) {
+
   plop.setGenerator('basics', {
     description: 'this is a skeleton plopfile',
     prompts: [
@@ -17,9 +14,10 @@ export default function (plop: NodePlopAPI) {
     actions: [
       {
         type: 'add',
-        path: 'tests/{{name}}.ts',
+        path: 'tests/{{name}}.test.ts',
         templateFile: 'src/tpl/ava.test.tpl'
       }
     ]  // array of actions
   })
+
 }
