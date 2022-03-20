@@ -2,20 +2,21 @@
   "name": "create-plop",
   "version": "0.0.1",
   "type": "module",
+  "preferGlobal": true,
   "description": "Generator for creating plopfile.js for your project",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "scripts": {
+    "start": "plop",
     "test": "ava",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "build-tsc": "tsc -p tsconfig.json",
     "build": "./node_modules/.bin/esbuild plopfile.ts --bundle --outfile=plopfile.js",
     "clean": "node ./clean.js",
     "docs": "typedoc --entryPoints src/main.ts",
-    "ts": "node -r esbuild-register",
-    "plop": "plop"
+    "ts": "node -r esbuild-register"
   },
   "repository": {
     "type": "git",
@@ -34,25 +35,21 @@
   "author": "Joel Chu <joelchu@foxmail.com>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "plop": "^3.0.5",
     "@ava/typescript": "^1.1.1",
     "@types/fs-extra": "^9.0.11",
     "@types/node": "^15.3.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "ava": "^3.15.0",
-    "esbuild": "^0.12.0",
     "esbuild-register": "^2.5.0",
     "eslint": "^7.27.0",
-    "typedoc": "^0.20.36",
-    "typescript": "^4.2.4",
-    "aws-v-cli": "^0.2.3",
-    "ts-node": "^9.1.1"
+    "tslib": "^1.14.1",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
+    "plop": "^3.0.5",
     "fs-extra": "^10.0.0",
-    "tslib": "^1.14.1",
-    "yargs": "^16.2.0"
+    "minimist": "^1.2.5"
   },
   "ava": {
     "extensions": [
